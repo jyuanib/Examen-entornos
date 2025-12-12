@@ -1,0 +1,24 @@
+SOCIO(nro_socio PK, nombre_socio, apellido_socio, direccion_socio, telefono_socio
+PRESTAMO(id_prestamo PK, dias_prestamo, fecha_prestamo, fecha_esperada_devolucion, fecha_devolucion, nro_socio FK(SOCIO.nro_socio), isbn_libro FK(LIBRO.isbn))
+LIBRO(isbn PK, titulo_libro, código_libro,nombre_autor, fecha_nac_autor, fecha_muerte_autor, tipo_autor, paginas_libro)
+
+1FN
+LIBRO(isbn PK, titulo_libro, paginas_libro)
+esautor(isbn PK, código_autor PK, nombre_autor, fecha_nac_autor, fecha_muerte_autor, tipo_autor)
+SOCIO(nro_socio PK, nombre_socio, apellido_socio, direccion_socio, telefono_socio
+PRESTAMO(id_prestamo PK, dias_prestamo, fecha_prestamo, fecha_esperada_devolucion, fecha_devolucion, nro_socio 	FK(SOCIO.nro_socio), isbn_libro FK(LIBRO.isbn))
+1FN OK
+LIBRO(isbn PK, titulo_libro, paginas_libro)
+AUTOR(código_autor PK, nombre_autor, fecha_nac_autor, fecha_muerte_autor)
+esautor(isbn PK, código_autor PK, tipo_autor)
+SOCIO(nro_socio PK, nombre_socio, apellido_socio, direccion_socio, telefono_socio)
+PRESTAMO(id_prestamo PK, dias_prestamo, fecha_prestamo, fecha_esperada_devolucion, fecha_devolucion, nro_socio 	FK(SOCIO.nro_socio), isbn_libro FK(LIBRO.isbn))
+2FN OK
+LIBRO(isbn PK, titulo_libro, paginas_libro, dias_prestamo)
+AUTOR(código_autor PK, nombre_autor, fecha_nac_autor, fecha_muerte_autor)
+esautor(isbn PK, código_autor PK, tipo_autor)
+SOCIO(nro_socio PK, nombre_socio, apellido_socio, direccion_socio, telefono_socio)
+PRESTAMO(id_prestamo PK, fecha_prestamo, fecha_devolucion, nro_socio FK(SOCIO.nro_socio), isbn_libro FK(LIBRO.isbn))
+fechas_devolucion(isbn PK, fecha_prestamo PK, fecha_esperada_devolucion)
+3FN OK
+FNBC
